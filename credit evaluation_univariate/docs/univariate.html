@@ -1,0 +1,899 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>univariate &mdash; Univariate Analysis 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Univariate Analysis’s Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Univariate Analysis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">univariate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-univariate.calc_variable_statistics">univariate.calc_variable_statistics module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-univariate.coarse_classing">univariate.coarse_classing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-univariate.fine_classing">univariate.fine_classing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-univariate.performance_table">univariate.performance_table module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-univariate.univariate_analysis">univariate.univariate_analysis module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-univariate.univariate_analysis_other_psi">univariate.univariate_analysis_other_psi module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Univariate Analysis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>univariate</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/univariate.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="univariate">
+<h1>univariate<a class="headerlink" href="#univariate" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-univariate.calc_variable_statistics">
+<span id="univariate-calc-variable-statistics-module"></span><h2>univariate.calc_variable_statistics module<a class="headerlink" href="#module-univariate.calc_variable_statistics" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="univariate.calc_variable_statistics.calc_variable_stats">
+<code class="descclassname">univariate.calc_variable_statistics.</code><code class="descname">calc_variable_stats</code><span class="sig-paren">(</span><em>x_binned_df</em>, <em>use_columns_list</em>, <em>y_df</em>, <em>y_column_name</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.calc_variable_statistics.calc_variable_stats" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">입력 받은 모든 사용 변수 대해 statistics 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x_binned_df</strong> (<em>dataframe</em>) – coarse classing 완료한 독립변수 데이터</li>
+<li><strong>use_columns_list</strong> (<em>list</em>) – 사용할 변수 리스트</li>
+<li><strong>y_df</strong> (<em>dataframe</em>) – 종속변수 데이터</li>
+<li><strong>y_column_name</strong> (<em>string</em>) – 종속변수명</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dictionary:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">모든 사용변수의 statistics 결과</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.calc_variable_statistics.calc_variable_stats_func">
+<code class="descclassname">univariate.calc_variable_statistics.</code><code class="descname">calc_variable_stats_func</code><span class="sig-paren">(</span><em>x_binned_df</em>, <em>variable</em>, <em>y_df</em>, <em>y_column_name</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.calc_variable_statistics.calc_variable_stats_func" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">입력 받은 변수에 대한 statistics 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x_binned_df</strong> (<em>dataframe</em>) – coarse classing 완료한 독립변수 데이터</li>
+<li><strong>variable</strong> (<em>string</em>) – 독립변수명</li>
+<li><strong>y_df</strong> (<em>dataframe</em>) – 종속변수 데이터</li>
+<li><strong>y_column_name</strong> (<em>string</em>) – 종속변수명</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dictionary:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">각 항목별 통계량 결과</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.calc_variable_statistics.merge_dicts">
+<code class="descclassname">univariate.calc_variable_statistics.</code><code class="descname">merge_dicts</code><span class="sig-paren">(</span><em>dict_list</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.calc_variable_statistics.merge_dicts" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body">병렬처리 진행한 dictionary 결과를 결합하는 함수입니다.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dict_list</strong> (<em>list</em>) – statistics 계산 완료한 dictionary 결과 리스트</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dictionary:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">병렬처리 outputs을 합친 결과</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.calc_variable_statistics.parallelize_calc_variable_stats">
+<code class="descclassname">univariate.calc_variable_statistics.</code><code class="descname">parallelize_calc_variable_stats</code><span class="sig-paren">(</span><em>x_binned_df</em>, <em>use_columns_list</em>, <em>y_df</em>, <em>y_column_name</em>, <em>func</em>, <em>processes</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.calc_variable_statistics.parallelize_calc_variable_stats" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">병렬처리를 적용하여 statistics 결과를 변환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x_binned_df</strong> (<em>dataframe</em>) – coarse classing 완료한 독립변수 데이터</li>
+<li><strong>use_columns_list</strong> (<em>list</em>) – 사용할 변수 리스트</li>
+<li><strong>y_df</strong> (<em>dataframe</em>) – 종속변수 데이터</li>
+<li><strong>y_column_name</strong> (<em>string</em>) – 종속변수명</li>
+<li><strong>func</strong> (<em>function</em>) – 병렬처리할 calc_variable_stats 함수</li>
+<li><strong>processes</strong> (<em>int</em>) – 병렬처리에 사용할 core 개수</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dictionary:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">각각의 변수에 대한 statistics 결과</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-univariate.coarse_classing">
+<span id="univariate-coarse-classing-module"></span><h2>univariate.coarse_classing module<a class="headerlink" href="#module-univariate.coarse_classing" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="univariate.coarse_classing.coarse_classing">
+<code class="descclassname">univariate.coarse_classing.</code><code class="descname">coarse_classing</code><span class="sig-paren">(</span><em>x_binned_train_df</em>, <em>y_train_df</em>, <em>x_binned_valid_df</em>, <em>x_binned_test_df</em>, <em>x_binned_model_valid_df</em>, <em>y_column_name</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.coarse_classing.coarse_classing" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">각각의 bin을 결합해보며 IV 변화율이 가장 낮고 bin개수가 10개일 때의 bin 결합조합을 적용한 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x_binned_train_df</strong> (<em>dataframe</em>) – fine classing 완료한 train 독립변수 데이터</li>
+<li><strong>y_train_df</strong> (<em>dataframe</em>) – train 종속변수 데이터</li>
+<li><strong>x_binned_valid_df</strong> (<em>dataframe</em>) – fine classing 완료한 valid 독립변수 데이터</li>
+<li><strong>x_binned_test_df</strong> (<em>dataframe</em>) – fine classing 완료한 test 독립변수 데이터</li>
+<li><strong>x_binned_model_valid_df</strong> (<em>dataframe</em>) – fine classing 완료한 model valid 독립변수 데이터</li>
+<li><strong>y_column_name</strong> (<em>string</em>) – 종속변수명</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return tuple:</th><td class="field-body"><p class="first last">coarse classing된 train/valid/test/model valid dataframe</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.coarse_classing.get_iv_df">
+<code class="descclassname">univariate.coarse_classing.</code><code class="descname">get_iv_df</code><span class="sig-paren">(</span><em>iv_df</em>, <em>best_idx</em>, <em>variable</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.coarse_classing.get_iv_df" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">두 개의 bin을 결합했을 때의 statistics 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iv_df</strong> (<em>dataframe</em>) – bin 결합 전 statistics 결과</li>
+<li><strong>best_idx</strong> (<em>array</em>) – 결합할 bin의 statistics기준 index</li>
+<li><strong>variable</strong> (<em>string</em>) – 독립변수명</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">bin 결합 후 statistics 결과</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.coarse_classing.grouping">
+<code class="descclassname">univariate.coarse_classing.</code><code class="descname">grouping</code><span class="sig-paren">(</span><em>fine_binned_df</em>, <em>coarse_statistics_result_df</em>, <em>variable</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.coarse_classing.grouping" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">bin 결합 후 데이터에 결합한 bin 결과를 적용하는 함수입니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fine_binned_df</strong> (<em>dataframe</em>) – fine classing 완료한 독립변수 데이터</li>
+<li><strong>coarse_statistics_result_df</strong> (<em>dataframe</em>) – bin 결합한 statistics 결과 데이터</li>
+<li><strong>variable</strong> (<em>string</em>) – 독립변수명</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">coarse classing 결과를 적용한 binning dataframe</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.coarse_classing.merge_bin">
+<code class="descclassname">univariate.coarse_classing.</code><code class="descname">merge_bin</code><span class="sig-paren">(</span><em>x_binned_df</em>, <em>variable</em>, <em>y_df</em>, <em>y_column_name</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.coarse_classing.merge_bin" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">해당 변수의 모든 bin에 대해서 IV 변화율이 가장 낮으면서  bin이 10개가 되도록 변환하는 함수입니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x_binned_df</strong> (<em>dataframe</em>) – fine classing을 완료한 독립변수 데이터</li>
+<li><strong>variable</strong> (<em>string</em>) – 독립변수명</li>
+<li><strong>y_df</strong> (<em>dataframe</em>) – 종속변수 데이터</li>
+<li><strong>y_column_name</strong> (<em>string</em>) – 종속변수명</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">bin을 최적의 10개까지 결합한 통계량 결과</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.coarse_classing.parallelize_coarse_classing">
+<code class="descclassname">univariate.coarse_classing.</code><code class="descname">parallelize_coarse_classing</code><span class="sig-paren">(</span><em>x_binned_train_df</em>, <em>y_train_df</em>, <em>x_binned_valid_df</em>, <em>x_binned_test_df</em>, <em>x_binned_model_valid_df</em>, <em>y_column_name</em>, <em>func</em>, <em>processes</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.coarse_classing.parallelize_coarse_classing" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">병렬처리를 적용하여 coarse classing 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x_binned_train_df</strong> (<em>dataframe</em>) – fine classing 완료한 train 독립변수 데이터</li>
+<li><strong>y_train_df</strong> (<em>dataframe</em>) – train 종속변수 데이터</li>
+<li><strong>x_binned_valid_df</strong> (<em>dataframe</em>) – fine classing 완료한 valid 독립변수 데이터</li>
+<li><strong>x_binned_test_df</strong> (<em>dataframe</em>) – fine classing 완료한 test 독립변수 데이터</li>
+<li><strong>x_binned_model_valid_df</strong> (<em>dataframe</em>) – fine classing 완료한 model valid 독립변수 데이터</li>
+<li><strong>y_column_name</strong> (<em>string</em>) – 종속변수명</li>
+<li><strong>func</strong> (<em>function</em>) – 병렬처리할 coarse_classing 함수</li>
+<li><strong>processes</strong> (<em>int</em>) – 병렬처리에 사용할 core 개수</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return tuple:</th><td class="field-body"><p class="first last">coarse classing된 train/valid/test/model valid dataframe</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-univariate.fine_classing">
+<span id="univariate-fine-classing-module"></span><h2>univariate.fine_classing module<a class="headerlink" href="#module-univariate.fine_classing" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="univariate.fine_classing.fine_classing">
+<code class="descclassname">univariate.fine_classing.</code><code class="descname">fine_classing</code><span class="sig-paren">(</span><em>x_train_df</em>, <em>x_valid_df</em>, <em>x_test_df</em>, <em>x_model_valid_df</em>, <em>numeric_columns_list</em>, <em>bin_cut</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.fine_classing.fine_classing" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">binning 범위를 입력 받아 numeric 변수에 한해 train을 binning하고 valid/test/model valid에  train 기준 binning 적용한 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x_train_df</strong> (<em>dataframe</em>) – 독립변수 train 데이터</li>
+<li><strong>x_valid_df</strong> (<em>dataframe</em>) – 독립변수 valid 데이터</li>
+<li><strong>x_test_df</strong> (<em>dataframe</em>) – 독립변수 test 데이터</li>
+<li><strong>x_model_valid_df</strong> (<em>dataframe</em>) – 독립변수 model valid 데이터</li>
+<li><strong>numeric_columns_list</strong> (<em>list</em>) – 숫자형 변수 리스트</li>
+<li><strong>bin_cut</strong> (<em>array</em>) – binning 기준 배열(numpy.linspace 권장)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return tuple:</th><td class="field-body"><p class="first last">binning 된 train/valid/test/model valid dataframe</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.fine_classing.parallelize_fine_classing">
+<code class="descclassname">univariate.fine_classing.</code><code class="descname">parallelize_fine_classing</code><span class="sig-paren">(</span><em>x_train_df</em>, <em>x_valid_df</em>, <em>x_test_df</em>, <em>x_model_valid_df</em>, <em>numeric_columns_list</em>, <em>bin_cut</em>, <em>func</em>, <em>processes</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.fine_classing.parallelize_fine_classing" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">병렬처리를 적용하여 fine classing 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x_train_df</strong> (<em>dataframe</em>) – 독립변수 train 데이터</li>
+<li><strong>x_valid_df</strong> (<em>dataframe</em>) – 독립변수 valid 데이터</li>
+<li><strong>x_test_df</strong> (<em>dataframe</em>) – 독립변수 test 데이터</li>
+<li><strong>x_model_valid_df</strong> (<em>dataframe</em>) – 독립변수 model valid 데이터</li>
+<li><strong>numeric_columns_list</strong> (<em>list</em>) – 숫자형 변수 리스트</li>
+<li><strong>bin_cut</strong> (<em>array</em>) – binning 기준 배열(numpy.linspace 권장)</li>
+<li><strong>func</strong> (<em>function</em>) – 병렬처리할 fine_classing 함수</li>
+<li><strong>processes</strong> (<em>int</em>) – 병렬처리에 사용할 core 개수</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return tuple:</th><td class="field-body"><p class="first last">binning 된 train/valid/test/model valid dataframe</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-univariate.performance_table">
+<span id="univariate-performance-table-module"></span><h2>univariate.performance_table module<a class="headerlink" href="#module-univariate.performance_table" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="univariate.performance_table.base_performance_table">
+<code class="descclassname">univariate.performance_table.</code><code class="descname">base_performance_table</code><span class="sig-paren">(</span><em>train_calc_stats_dict</em>, <em>valid_calc_stats_dict</em>, <em>test_calc_stats_dict</em>, <em>layout</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.performance_table.base_performance_table" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">입력 받은 train/valid/test의 statistics 계산결과를 layout과 병합하여 항목 정보를 생성하는 함수입니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>train_calc_stats_dict</strong> (<em>dictionary</em>) – train 데이터의 독립변수 performance 결과</li>
+<li><strong>valid_calc_stats_dict</strong> (<em>dictionary</em>) – valid 데이터의 독립변수 performance 결과</li>
+<li><strong>test_calc_stats_dict</strong> (<em>dictionary</em>) – test 데이터의 독립변수 performance 결과</li>
+<li><strong>layout</strong> (<em>dataframe</em>) – layout 데이터</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">항목별 정보, performance값 결과</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-univariate.univariate_analysis">
+<span id="univariate-univariate-analysis-module"></span><h2>univariate.univariate_analysis module<a class="headerlink" href="#module-univariate.univariate_analysis" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="univariate.univariate_analysis.calc_correlation">
+<code class="descclassname">univariate.univariate_analysis.</code><code class="descname">calc_correlation</code><span class="sig-paren">(</span><em>performance_table</em>, <em>group_divide_colname</em>, <em>corr_value</em>, <em>binned_train_df</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis.calc_correlation" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">안정성 통과한 항목에 한해 정보그룹별 상관분석 항목선정 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>performance_table</strong> (<em>dataframe</em>) – performance table</li>
+<li><strong>group_divide_colname</strong> (<em>string</em>) – 정보그룹분류 항목명</li>
+<li><strong>corr_value</strong> (<em>float</em>) – 상관분석 기준값</li>
+<li><strong>binned_train_df</strong> (<em>dataframe</em>) – binning 된 train 데이터</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">상관분석 결과가 추가된 performance table</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.univariate_analysis.calc_psi">
+<code class="descclassname">univariate.univariate_analysis.</code><code class="descname">calc_psi</code><span class="sig-paren">(</span><em>binned_train_df</em>, <em>binned_valid_df</em>, <em>binned_test_df</em>, <em>binned_model_valid_df</em>, <em>performance_table</em>, <em>psi_value</em>, <em>use_columns_list</em>, <em>category_columns_list</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis.calc_psi" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">항복별 PSI 값과 PSI 선정여부 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>binned_train_df</strong> (<em>dataframe</em>) – binning 된 train 데이터</li>
+<li><strong>binned_valid_df</strong> (<em>dataframe</em>) – binning 된 valid 데이터</li>
+<li><strong>binned_test_df</strong> (<em>dataframe</em>) – binning 된 test 데이터</li>
+<li><strong>binned_model_valid_df</strong> (<em>dataframe</em>) – binning 된 model valid 데이터</li>
+<li><strong>performance_table</strong> (<em>dataframe</em>) – performance table</li>
+<li><strong>psi_value</strong> (<em>float</em>) – PSI 기준값</li>
+<li><strong>use_columns_list</strong> (<em>list</em>) – 사용 변수 리스트</li>
+<li><strong>category_columns_list</strong> (<em>list</em>) – categorical 변수 리스트</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">모든 항목의 PSI 값 및 선정여부 결과가 추가된 performance table</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.univariate_analysis.calc_stable">
+<code class="descclassname">univariate.univariate_analysis.</code><code class="descname">calc_stable</code><span class="sig-paren">(</span><em>performance_table</em>, <em>performance_item_list</em>, <em>group_divide_col_name</em>, <em>stable_value</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis.calc_stable" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">변별력 통과한 항목에 한해 정보그룹별 안정성 ±N% 항목선정 결과를 반환합니다.
+(참고 산술식) train * (1-stable_value) ≤ valid ≤ train * (1 + stable_value)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>performance_table</strong> (<em>dataframe</em>) – performance table</li>
+<li><strong>performance_item_list</strong> (<em>list</em>) – iv, ks, ar 리스트 (주로 iv만 사용)</li>
+<li><strong>group_divide_col_name</strong> (<em>string</em>) – 정보그룹분류 항목명</li>
+<li><strong>stable_value</strong> (<em>float</em>) – 안정성 기준값</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">안정성 선정 결과가 추가된 performance table</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.univariate_analysis.calc_top">
+<code class="descclassname">univariate.univariate_analysis.</code><code class="descname">calc_top</code><span class="sig-paren">(</span><em>performance_table</em>, <em>performance_item_list</em>, <em>group_divide_col_name</em>, <em>top_value</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis.calc_top" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">PSI 통과한 항목에 한해 정보그룹별 상위 N% 항목 선정 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>performance_table</strong> (<em>dataframe</em>) – performance table</li>
+<li><strong>performance_item_list</strong> (<em>list</em>) – iv, ks, ar 리스트 (주로 iv만 사용)</li>
+<li><strong>group_divide_col_name</strong> (<em>string</em>) – 정보그룹분류 항목명</li>
+<li><strong>top_value</strong> (<em>float</em>) – 변별력 기준값</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">변별력 선정 결과가 추가된 performance table</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.univariate_analysis.get_table">
+<code class="descclassname">univariate.univariate_analysis.</code><code class="descname">get_table</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis.get_table" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body">항목별 PSI 계산을 위한 항목값, 건수, 구성비를 반환합니다.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><strong>df</strong> (<em>Series</em>) – 독립변수 Series</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">항목 건수, 구성비 결과</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.univariate_analysis.object_to_code">
+<code class="descclassname">univariate.univariate_analysis.</code><code class="descname">object_to_code</code><span class="sig-paren">(</span><em>binned_df</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis.object_to_code" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body">bin값을 정수(코드화)로 변환하는 함수입니다.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><strong>binned_df</strong> (<em>dataframe</em>) – binning된 데이터</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">bin값이 정수로 변환된 결과</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.univariate_analysis.select_candidate_variable">
+<code class="descclassname">univariate.univariate_analysis.</code><code class="descname">select_candidate_variable</code><span class="sig-paren">(</span><em>binned_train_df</em>, <em>binned_valid_df</em>, <em>binned_test_df</em>, <em>binned_model_valid_df</em>, <em>performance_table</em>, <em>use_columns_list</em>, <em>category_columns_list</em>, <em>performance_item_list</em>, <em>group_divide_col_name</em>, <em>psi_value</em>, <em>top_value</em>, <em>stable_value</em>, <em>corr_value</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis.select_candidate_variable" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">단변량 분석을 통한 후보변수 선정 결과 및 상관분석 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>binned_train_df</strong> (<em>dataframe</em>) – binning 된 train 데이터</li>
+<li><strong>binned_valid_df</strong> (<em>dataframe</em>) – binning 된 valid 데이터</li>
+<li><strong>binned_test_df</strong> (<em>dataframe</em>) – binning 된 test 데이터</li>
+<li><strong>binned_model_valid_df</strong> (<em>dataframe</em>) – binning 된 model valid 데이터</li>
+<li><strong>performance_table</strong> (<em>dataframe</em>) – performance table</li>
+<li><strong>use_columns_list</strong> (<em>list</em>) – 사용 변수 리스트</li>
+<li><strong>category_columns_list</strong> (<em>list</em>) – categorical 변수 리스트</li>
+<li><strong>performance_item_list</strong> (<em>list</em>) – iv, ks, ar 리스트 (주로 iv만 사용)</li>
+<li><strong>group_divide_col_name</strong> (<em>string</em>) – 정보그룹분류 항목명</li>
+<li><strong>psi_value</strong> (<em>float</em>) – PSI 기준값</li>
+<li><strong>top_value</strong> (<em>float</em>) – 변별력 기준값</li>
+<li><strong>stable_value</strong> (<em>float</em>) – 안정성 기준값</li>
+<li><strong>corr_value</strong> (<em>float</em>) – 상관분석 기준값</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return tuple:</th><td class="field-body"><p class="first last">후보변수 선정 dataframe, 상관분석 dictionary, 상관성 높은 변수 제거한 후 상관분석 dictionary</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-univariate.univariate_analysis_other_psi">
+<span id="univariate-univariate-analysis-other-psi-module"></span><h2>univariate.univariate_analysis_other_psi module<a class="headerlink" href="#module-univariate.univariate_analysis_other_psi" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="univariate.univariate_analysis_other_psi.calc_correlation">
+<code class="descclassname">univariate.univariate_analysis_other_psi.</code><code class="descname">calc_correlation</code><span class="sig-paren">(</span><em>performance_table</em>, <em>group_divide_colname</em>, <em>corr_value</em>, <em>binned_train_df</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis_other_psi.calc_correlation" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">안정성 통과한 항목에 한해 정보그룹별 상관분석 항목선정 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>performance_table</strong> (<em>dataframe</em>) – performance table</li>
+<li><strong>group_divide_colname</strong> (<em>string</em>) – 정보그룹분류 항목명</li>
+<li><strong>corr_value</strong> (<em>float</em>) – 상관분석 기준값</li>
+<li><strong>binned_train_df</strong> (<em>dataframe</em>) – binning 된 train 데이터</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">상관분석 결과가 추가된 performance table</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.univariate_analysis_other_psi.calc_psi">
+<code class="descclassname">univariate.univariate_analysis_other_psi.</code><code class="descname">calc_psi</code><span class="sig-paren">(</span><em>binned_train_df</em>, <em>binned_valid_df</em>, <em>binned_test_df</em>, <em>binned_model_valid_df</em>, <em>performance_table</em>, <em>base_psi_value</em>, <em>use_columns_list</em>, <em>category_columns_list</em>, <em>other_columns_list</em>, <em>other_psi_value</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis_other_psi.calc_psi" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">항복별 PSI 값과 PSI 선정여부 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>binned_train_df</strong> (<em>dataframe</em>) – binning 된 train 데이터</li>
+<li><strong>binned_valid_df</strong> (<em>dataframe</em>) – binning 된 valid 데이터</li>
+<li><strong>binned_test_df</strong> (<em>dataframe</em>) – binning 된 test 데이터</li>
+<li><strong>binned_model_valid_df</strong> (<em>dataframe</em>) – binning 된 model valid 데이터</li>
+<li><strong>performance_table</strong> (<em>dataframe</em>) – performance table</li>
+<li><strong>psi_value</strong> (<em>float</em>) – PSI 기준값</li>
+<li><strong>use_columns_list</strong> (<em>list</em>) – 사용 변수 리스트</li>
+<li><strong>category_columns_list</strong> (<em>list</em>) – categorical 변수 리스트</li>
+<li><strong>other_columns_list</strong> (<em>list</em>) – PSI 기준값을 다르게 적용할 변수 리스트</li>
+<li><strong>other_psi_value</strong> (<em>float</em>) – 특정 변수에 적용할 PSI 기준값</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">모든 항목의 PSI 값 및 선정여부 결과가 추가된 performance table</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.univariate_analysis_other_psi.calc_stable">
+<code class="descclassname">univariate.univariate_analysis_other_psi.</code><code class="descname">calc_stable</code><span class="sig-paren">(</span><em>performance_table</em>, <em>performance_item_list</em>, <em>group_divide_col_name</em>, <em>stable_value</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis_other_psi.calc_stable" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">변별력 통과한 항목에 한해 정보그룹별 안정성 ±N% 항목선정 결과를 반환합니다.
+(참고 산술식) train * (1-stable_value) ≤ valid ≤ train * (1 + stable_value)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>performance_table</strong> (<em>dataframe</em>) – performance table</li>
+<li><strong>performance_item_list</strong> (<em>list</em>) – iv, ks, ar 리스트 (주로 iv만 사용)</li>
+<li><strong>group_divide_col_name</strong> (<em>string</em>) – 정보그룹분류 항목명</li>
+<li><strong>stable_value</strong> (<em>float</em>) – 안정성 기준값</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">안정성 선정 결과가 추가된 performance table</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.univariate_analysis_other_psi.calc_top">
+<code class="descclassname">univariate.univariate_analysis_other_psi.</code><code class="descname">calc_top</code><span class="sig-paren">(</span><em>performance_table</em>, <em>performance_item_list</em>, <em>group_divide_col_name</em>, <em>top_value</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis_other_psi.calc_top" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">PSI 통과한 항목에 한해 정보그룹별 상위 N% 항목 선정 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>performance_table</strong> (<em>dataframe</em>) – performance table</li>
+<li><strong>performance_item_list</strong> (<em>list</em>) – iv, ks, ar 리스트 (주로 iv만 사용)</li>
+<li><strong>group_divide_col_name</strong> (<em>string</em>) – 정보그룹분류 항목명</li>
+<li><strong>top_value</strong> (<em>float</em>) – 변별력 기준값</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">변별력 선정 결과가 추가된 performance table</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.univariate_analysis_other_psi.get_table">
+<code class="descclassname">univariate.univariate_analysis_other_psi.</code><code class="descname">get_table</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis_other_psi.get_table" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body">항목별 PSI 계산을 위한 항목값, 건수, 구성비를 반환합니다.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><strong>df</strong> (<em>Series</em>) – 독립변수 Series</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">항목 건수, 구성비 결과</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.univariate_analysis_other_psi.object_to_code">
+<code class="descclassname">univariate.univariate_analysis_other_psi.</code><code class="descname">object_to_code</code><span class="sig-paren">(</span><em>binned_df</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis_other_psi.object_to_code" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body">bin값을 정수(코드화)로 변환하는 함수입니다.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><strong>binned_df</strong> (<em>dataframe</em>) – binning된 데이터</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Return dataframe:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">bin값이 정수로 변환된 결과</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="univariate.univariate_analysis_other_psi.select_candidate_variable">
+<code class="descclassname">univariate.univariate_analysis_other_psi.</code><code class="descname">select_candidate_variable</code><span class="sig-paren">(</span><em>binned_train_df</em>, <em>binned_valid_df</em>, <em>binned_test_df</em>, <em>binned_model_valid_df</em>, <em>performance_table</em>, <em>use_columns_list</em>, <em>category_columns_list</em>, <em>other_columns_list</em>, <em>other_psi_value</em>, <em>performance_item_list</em>, <em>group_divide_col_name</em>, <em>base_psi_value</em>, <em>top_value</em>, <em>stable_value</em>, <em>corr_value</em><span class="sig-paren">)</span><a class="headerlink" href="#univariate.univariate_analysis_other_psi.select_candidate_variable" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Explain:</th><td class="field-body"><p class="first">단변량 분석을 통한 후보변수 선정 결과 및 상관분석 결과를 반환합니다.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>binned_train_df</strong> (<em>dataframe</em>) – binning 된 train 데이터</li>
+<li><strong>binned_valid_df</strong> (<em>dataframe</em>) – binning 된 valid 데이터</li>
+<li><strong>binned_test_df</strong> (<em>dataframe</em>) – binning 된 test 데이터</li>
+<li><strong>binned_model_valid_df</strong> (<em>dataframe</em>) – binning 된 model valid 데이터</li>
+<li><strong>performance_table</strong> (<em>dataframe</em>) – performance table</li>
+<li><strong>use_columns_list</strong> (<em>list</em>) – 사용 변수 리스트</li>
+<li><strong>category_columns_list</strong> (<em>list</em>) – categorical 변수 리스트</li>
+<li><strong>other_columns_list</strong> (<em>list</em>) – PSI 기준값을 다르게 적용할 변수 리스트</li>
+<li><strong>other_psi_value</strong> (<em>float</em>) – 특정 변수에 적용할 PSI 기준값</li>
+<li><strong>performance_item_list</strong> (<em>list</em>) – iv, ks, ar 리스트 (주로 iv만 사용)</li>
+<li><strong>group_divide_col_name</strong> (<em>string</em>) – 정보그룹분류 항목명</li>
+<li><strong>base_psi_value</strong> (<em>float</em>) – PSI 기준값</li>
+<li><strong>top_value</strong> (<em>float</em>) – 변별력 기준값</li>
+<li><strong>stable_value</strong> (<em>float</em>) – 안정성 기준값</li>
+<li><strong>corr_value</strong> (<em>float</em>) – 상관분석 기준값</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return tuple:</th><td class="field-body"><p class="first last">후보변수 선정 dataframe, 상관분석 dictionary, 상관성 높은 변수 제거한 후 상관분석 dictionary</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Univariate Analysis’s Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, KiHoon
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
